@@ -70,7 +70,7 @@ void isrsInstall(){
 }
 
 void faultHandler(PSTACK_SNAPSHOT r){
-  unsigned char* exceptionMsgs[] = {
+  unsigned char* exceptionMsgs[] = { //need to fix global variable problem
     "Division By Zero Exception\n",
     "Debug Exception\n",
     "Maskable Interrupt Exception\n",

@@ -2,6 +2,7 @@
 #include "include/system.h"
 #include "include/timer.h"
 
+char* str2 = "Omri's OS (mini shell)\n";
 
 void kmain(){
 	int z = 2;
@@ -10,6 +11,9 @@ void kmain(){
 
 	clearScreen();
 	setCursorOffset(0);
+
+	printString(str2, WHITE_ON_BLACK);
+	printString(str, WHITE_ON_BLACK);
 
 	printString(str, BLUE_ON_BLACK);
 	printString("[*] Installing a new idt - ", WHITE_ON_BLACK);

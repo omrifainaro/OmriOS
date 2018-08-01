@@ -4,7 +4,7 @@ char STDIN[STDIN_SIZE];
 unsigned int count = 0;
 void keyboardHandler(PSTACK_SNAPSHOT snap){
   unsigned char keyboardLayout[128] =
-  {
+  { //need to fix global variables
     0,  27, '1', '2', '3', '4', '5', '6', '7', '8',
     '9', '0', '-', '=', '\b', '\t', 'q', 'w', 'e', 'r',
     't', 'y', 'u', 'i', 'o', 'p', '[', ']', '\n', 0,

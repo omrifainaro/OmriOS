@@ -17,7 +17,7 @@ typedef struct _STACK_SNAPSHOT {
     unsigned int gs, fs, es, ds;
     unsigned int edi, esi, ebp, esp, ebx, edx, ecx, eax;  /* 'pusha' */
     unsigned int intNum, errCode;    /* 'push byte #' and errcode do this */
-    unsigned int eip, cs, eflags, useresp, ss;   /* pushed by the processor automatically */
+    unsigned int eip, cs, eflags, useresp, ss;   /* automatically pushed*/
 } STACK_SNAPSHOT, *PSTACK_SNAPSHOT;
 
 void idtInstall();

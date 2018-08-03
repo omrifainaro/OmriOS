@@ -8,6 +8,7 @@ kernel/kernel.bin: kernel/Makefile
 	make -C kernel/
 
 clean: kernel/kernel.bin boot.bin
+	rm -f os_image
 	-rm *.bin
 	-rm kernel/*.o
 	-rm kernel/*.bin

@@ -4,8 +4,8 @@ static inline unsigned int getScreenOffset(int x, int y){
   return 2 * ((y * WIDTH) + x);
 }
 
-static char* chars = "0123456789ABCDEF";
 void printHex(unsigned int value){
+  char* chars = "0123456789ABCDEF";
   int i = sizeof(int) * 2; //value in nibbles
   char cur;
   for(; i >= 0; value = value >> 4, i--){

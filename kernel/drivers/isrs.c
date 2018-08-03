@@ -69,31 +69,30 @@ void isrsInstall(){
   printString("All isrs are now handled!\n", GREEN_ON_BLACK);
 }
 
+unsigned char* exceptionMsgs[] = { //need to fix global variable problem
+  "Division By Zero Exception\n",
+  "Debug Exception\n",
+  "Maskable Interrupt Exception\n",
+  "Breakpoint Exception\n",
+  "Into Detected Overflow Exception\n",
+  "Out of Bounds Exception\n",
+  "Invalid Opcode Exception\n",
+  "Coprocessor Exception\n",
+  "Double Fault Exception\n",
+  "Coprocessor Segment Overrun Exception\n",
+  "0Bad TSS Exception\n",
+  "Segment t Present Exception\n",
+  "Stack Fault Exception\n",
+  "General Protection Fault Exception\n",
+  "Page Fault Exception\n",
+  "Unkwn Interrupt Exception\n",
+  "Coprocessor Fault Exception\n",
+  "Alignment Check Exception (+)\n",
+  "Machine Check Exception (Pentium/+)\n",
+  "Reserved Exceptions\n",
+};
 void faultHandler(PSTACK_SNAPSHOT r){
-  unsigned char* exceptionMsgs[] = { //need to fix global variable problem
-    "Division By Zero Exception\n",
-    "Debug Exception\n",
-    "Maskable Interrupt Exception\n",
-    "Breakpoint Exception\n",
-    "Into Detected Overflow Exception\n",
-    "Out of Bounds Exception\n",
-    "Invalid Opcode Exception\n",
-    "Coprocessor Exception\n",
-    "Double Fault Exception\n",
-    "Coprocessor Segment Overrun Exception\n",
-    "0Bad TSS Exception\n",
-    "Segment t Present Exception\n",
-    "Stack Fault Exception\n",
-    "General Protection Fault Exception\n",
-    "Page Fault Exception\n",
-    "Unkwn Interrupt Exception\n",
-    "Coprocessor Fault Exception\n",
-    "Alignment Check Exception (+)\n",
-    "Machine Check Exception (Pentium/+)\n",
-    "Reserved Exceptions\n",
-  };
   printString("Fault recieved - ", RED_ON_BLACK);
-  //printInteger(r->intNum);
   if(r->intNum < 32){
     if(r->intNum > 19)
       r->intNum = 19;

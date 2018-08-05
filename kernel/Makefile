@@ -1,4 +1,4 @@
-objs = main.o kernelbase.o drivers/screen.o drivers/ports.o drivers/keyboard.o drivers/idt.o drivers/core.o utils/utils.o drivers/isrs.o drivers/irq.o drivers/timer.o
+objs = main.o kernelbase.o drivers/screen.o drivers/ports.o drivers/keyboard.o drivers/idt.o drivers/core.o utils/utils.o drivers/isrs.o drivers/irq.o drivers/timer.o utils/print.o
 
 C_FLAGS = --freestanding -c -m32
 

@@ -9,7 +9,7 @@ switch_to_pm:
 
 [ bits 32]
 init_pm :
-	mov ax, DATA_SEG
+	mov ax, 0x10
 	mov ds, ax
 	mov ss, ax
 	mov es, ax

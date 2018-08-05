@@ -21,14 +21,9 @@
 #define REG_SCREEN_CTRL 0x3D4
 #define REG_SCREEN_DATA 0x3D5
 
-void printHex(unsigned int value);
-void putchar(char c, char style);
-void printChar(char c, int x, int y, char style);
-void printString(char* string, char style);
-void printInteger(unsigned int num);
+unsigned int getScreenOffset(int x, int y);
 unsigned int getCursorOffset();
 void setCursorOffset(unsigned int offset);
 void clearScreen();
-void printStringAt(char* string, int x, int y, char style);
 
 #endif

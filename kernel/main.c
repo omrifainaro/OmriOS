@@ -1,11 +1,12 @@
 #include "include/keyboard.h"
 #include "include/system.h"
 #include "include/timer.h"
-
+#include "include/print.h"
 
 void kmain(){
 	int z = 2;
 	int i = 2;
+	char c;
 	char* str = "Omri's OS (mini shell)\n";
 
 	clearScreen();
@@ -24,12 +25,10 @@ void kmain(){
 	keyboardInstall();
 	printString("[*] Done intializing operating system!\n", LBLUE_ON_BLACK);
 	__asm__("sti");
-	// putchar(getch(), WHITE_ON_BLACK);
-	// putchar(getch(), WHITE_ON_BLACK);
-	// putchar(getch(), WHITE_ON_BLACK);
-	// putchar(getch(), WHITE_ON_BLACK);
-	// while(1)
-	// 	printInteger(getch());
+
+	while((c = getch()) != 'q')
+		putchar(c, WHITE_ON_BLACK);
+
 	i /= (z - 2);
 	while(1);
 }

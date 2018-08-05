@@ -1,7 +1,7 @@
 #include "../include/keyboard.h"
 
 static unsigned char keyboardLayout[128] =
-{ //need to fix global variables
+{
   0,  27, '1', '2', '3', '4', '5', '6', '7', '8',
   '9', '0', '-', '=', '\b', '\t', 'q', 'w', 'e', 'r',
   't', 'y', 'u', 'i', 'o', 'p', '[', ']', '\n', 0,
@@ -16,14 +16,14 @@ unsigned int count = 0;
 void keyboardHandler(PSTACK_SNAPSHOT snap){
   unsigned char scancode;
   scancode = readBytePort(KEYBOARD_DATA_PRT);
-  if (scancode & 0x80){
+  if (scancode >= 128){
     //printString("Hit", WHITE_ON_BLACK);
 
   }
   else{
     count%=STDIN_SIZE;
     STDIN[count] = keyboardLayout[scancode];
-    putchar(keyboardLayout[scancode], WHITE_ON_BLACK);
+    //putchar(keyboardLayout[scancode], WHITE_ON_BLACK);
     count++;
   }
 }

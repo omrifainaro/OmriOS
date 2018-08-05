@@ -12,7 +12,7 @@ start:
 	mov bx, MSG_LOAD_KERNEL
 	call print_string
 	mov bx, KERNEL_OFFSET ;Kernel physical memory address;
-	mov dh, 17 ;size of our kernel (oversized lol)
+	mov dh, 20 ;size of our kernel (oversized lol)
 	mov dl, [BOOT_DRIVE]
 	call disk_load
 	call switch_to_pm
